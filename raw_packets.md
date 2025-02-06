@@ -4,7 +4,7 @@ The source code contains `parser` directory, where `DataParser` class does all d
 Namely, `DataParser::parseBinFile` does the actual parsing.
 - Each packet is 102 bytes long.
 - The first 5 bytes must be 0xAA64440101.
-- The 6th byte indicates the packet id. (0-127: Must be consecutive. Otherwise, the Bluetooth connection is not stable.)
+- The 6th byte indicates the packet id. (0-255: Must increase consecutively. Otherwise, some packets are lost and the Bluetooth connection is not stable.)
 - Packet body starts from the 7th byte and ends at the 96th byte (inclusive).
 - 97th, 98th, 99th, and 102nd bytes must be 0x00, 0x00, 0x00, and 0xCC respectively.
 - 100th, 101st bytes are packet checksum.
